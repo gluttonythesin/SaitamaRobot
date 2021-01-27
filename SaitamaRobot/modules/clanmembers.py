@@ -3,8 +3,8 @@ import json
 import os
 from typing import Optional
 
-from SaitamaRobot import (DEV_USERS, OWNER_ID, DRAGONS, SUPPORT_CHAT, DEMONS,
-                          TIGERS, WOLVES, dispatcher)
+from SaitamaRobot import (nurahiyon clan , OWNER_ID, yuja clan, SUPPORT_CHAT, mako clan,
+                          kygo clan , gremory clan , dispatcher)
 from SaitamaRobot.modules.helper_funcs.chat_status import (dev_plus, sudo_plus,
                                                            whitelist_plus)
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
@@ -23,7 +23,7 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
         reply = "That...is a chat! baka ka omae?"
 
     elif user_id == bot.id:
-        reply = "This does not work that way."
+        reply = "This does not work that way. are you dumb fam ?"
 
     else:
         reply = None
@@ -31,7 +31,7 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
 
 
 # This can serve as a deeplink example.
-#disasters =
+#clanss =
 # """ Text here """
 
 # do not async, not a handler
@@ -62,22 +62,22 @@ def addsudo(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, 'r') as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
-        message.reply_text("This member is already a Dragon Disaster")
+    if user_id in yuja clan :
+        message.reply_text("This member is already a member of the yuja clan , all hail the yuja")
         return ""
 
-    if user_id in DEMONS:
-        rt += "Requested HA to promote a Demon Disaster to Dragon."
+    if user_id in kygo clan :
+        rt += "Requested the head house  to promote a mako to one of the top families ."
         data['supports'].remove(user_id)
-        DEMONS.remove(user_id)
+        KYGO CLAN .remove(user_id)
 
-    if user_id in WOLVES:
-        rt += "Requested HA to promote a Wolf Disaster to Dragon."
+    if user_id in MAKO:
+        rt += "Requested HA to promote a yuja to kygo clan member."
         data['whitelists'].remove(user_id)
-        WOLVES.remove(user_id)
+        MAKO CLAN  .remove(user_id)
 
     data['sudos'].append(user_id)
-    DRAGONS.append(user_id)
+    MAKO.append(user_id)
 
     with open(ELEVATED_USERS_FILE, 'w') as outfile:
         json.dump(data, outfile, indent=4)
@@ -121,19 +121,19 @@ def addsupport(
     with open(ELEVATED_USERS_FILE, 'r') as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
-        rt += "Requested HA to deomote this Dragon to Demon"
+    if user_id in NURAHIYON CLAN :
+        rt += "Requested HA to deomote this member of the NURA CLAN to mako clan "
         data['sudos'].remove(user_id)
-        DRAGONS.remove(user_id)
+        NURAHIYON CLAN  .remove(user_id)
 
-    if user_id in DEMONS:
-        message.reply_text("This user is already a Demon Disaster.")
+    if user_id in lower clans :
+        message.reply_text("This user is already a part of the lower family.")
         return ""
 
-    if user_id in WOLVES:
-        rt += "Requested HA to promote this Wolf Disaster to Demon"
+    if user_id in GRIMORY CLAN:
+        rt += "Requested HA to promote this GRIMORY CLAN to MAKO"
         data['whitelists'].remove(user_id)
-        WOLVES.remove(user_id)
+        GREMORY.remove(user_id)
 
     data['supports'].append(user_id)
     DEMONS.append(user_id)
@@ -142,7 +142,7 @@ def addsupport(
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\n{user_member.first_name} was added as a Demon Disaster!")
+        rt + f"\n{user_member.first_name} was added as a kygo clan member!")
 
     log_message = (
         f"#SUPPORT\n"
@@ -176,22 +176,22 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, 'r') as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
-        rt += "This member is a Dragon Disaster, Demoting to Wolf."
+    if user_id in NURAHIYON CLAN:
+        rt += "This member is the member of the nurahiyon clan , Demoting to kygo clan ."
         data['sudos'].remove(user_id)
-        DRAGONS.remove(user_id)
+        NURAHIYON CLAN.remove(user_id)
 
-    if user_id in DEMONS:
-        rt += "This user is already a Demon Disaster, Demoting to Wolf."
+    if user_id in KYGO CLAN:
+        rt += "This user is already a member of a supreme kygo clan, Demoting to MAKO CLAN."
         data['supports'].remove(user_id)
-        DEMONS.remove(user_id)
+        KYGO CLAN.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already a Wolf Disaster.")
+        message.reply_text("This user is already a membeer of the mako clan.")
         return ""
 
     data['whitelists'].append(user_id)
-    WOLVES.append(user_id)
+    MAKO CLAN.append(user_id)
 
     with open(ELEVATED_USERS_FILE, 'w') as outfile:
         json.dump(data, outfile, indent=4)
@@ -215,7 +215,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
 @run_async
 @sudo_plus
 @gloggable
-def addtiger(update: Update, context: CallbackContext) -> str:
+def addkygoclan(update: Update, context: CallbackContext) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
@@ -233,33 +233,33 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Dragon Disaster, Demoting to Tiger."
+        rt += "LE GASP a member of the supreme comander nurahiyons clan ?!?!?, Demoting to KYGO CLAN."
         data['sudos'].remove(user_id)
-        DRAGONS.remove(user_id)
+        KYGO CLAN.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is already a Demon Disaster, Demoting to Tiger."
+        rt += "This user is already a member of a supreme clan, Demoting to Mura clan."
         data['supports'].remove(user_id)
-        DEMONS.remove(user_id)
+        GRIMORY CLAN.remove(user_id)
 
-    if user_id in WOLVES:
-        rt += "This user is already a Wolf Disaster, Demoting to Tiger."
+    if user_id in KYGO CLAN:
+        rt += "This user is already a member of a supreme clan , demoting  to mura clan."
         data['whitelists'].remove(user_id)
-        WOLVES.remove(user_id)
+        KYGO CLAN.remove(user_id)
 
-    if user_id in TIGERS:
-        message.reply_text("This user is already a Tiger.")
+    if user_id in MAKO CLAN:
+        message.reply_text("This user is already a member of the mako clan.")
         return ""
 
-    data['tigers'].append(user_id)
-    TIGERS.append(user_id)
+    data['mako clan'].append(user_id)
+    MAKO CLAN .append(user_id)
 
     with open(ELEVATED_USERS_FILE, 'w') as outfile:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
         rt +
-        f"\nSuccessfully promoted {user_member.first_name} to a Tiger Disaster!"
+        f"\nSuccessfully promoted {user_member.first_name} to a mako clan member!"
     )
 
     log_message = (
@@ -293,8 +293,8 @@ def removesudo(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, 'r') as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
-        message.reply_text("Requested HA to demote this user to Civilian")
+    if user_id in NURAHIYON CLAN:
+        message.reply_text("Requested the head house  to demote this user to normal mortal")
         DRAGONS.remove(user_id)
         data['sudos'].remove(user_id)
 
