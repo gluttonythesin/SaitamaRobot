@@ -207,7 +207,7 @@ def start(update: Update, context: CallbackContext):
                      [
                          InlineKeyboardButton(
                              text="🚑 Support Group",
-                             url=f"https://t.me/animeweeabos{SUPPORT_CHAT}"),
+                             url=f"https://t.me/animeweeabos"),
                          InlineKeyboardButton(
                              text="🔔 Updates Channel",
                              url="https://t.me/yunyunupdates")
@@ -220,7 +220,7 @@ def start(update: Update, context: CallbackContext):
                      [
                          InlineKeyboardButton(
                              text="🗄 Source code",
-                             url="https://github.com/AnimeKaizoku/SaitamaRobot")
+                             url="https://github.com/gluttonythesin/YUNYUNROBOT")
                      ]]))
     else:
         update.effective_message.reply_text(
