@@ -51,15 +51,15 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is yunyun ! 
+Hi {}, my name is Yunyun ! 
 I am an Anime themed group management bot.
 Build by weebs for weebs, I specialize in managing anime and similar themed groups.
 You can find my list of available commands with +help.
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{yunyun chan }*.
-I'm a anime weebo For Fun and help admins manage their groups with a slice of my pushu pushu balls  ! Have a look at the following for an idea of some of \
+Hey there! My name is *Yunyun chan*.
+I'm an anime weebo for fun and help admins to manage their groups with a slice of my pushu pushu balls  ! Have a look at the following for an idea of some of \
 the things i can do .
 
 *Main* commands available:
@@ -586,7 +586,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Using long polling.")
+        LOGGER.info("AH yeah gluttony! yunyun is up now!!")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
