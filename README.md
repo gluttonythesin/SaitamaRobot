@@ -7,7 +7,7 @@ A modular Telegram Python bot running on python3 with a sqlalchemy database and 
 
 Can be found on telegram as [yunyun](@yunyunrobot).
 
-The Support group can be reached out to at [demonic ymir ](https://t.me/animeweeabos), where you can ask for help about [yunyun
+The Support group can be reached out to at [demonic ymir ](https://t.me/Yunyunrobotsupport), where you can ask for help about [yunyun
 ](@yunyunrobot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
 News channel as at [yunyun updates](https://t.me/yunyunupdates)
 ## How to setup/deploy.
